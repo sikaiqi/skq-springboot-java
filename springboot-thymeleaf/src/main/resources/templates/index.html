@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<p th:text="${msg}">
+    dsddd
+</p>
+
+<div th:text="${msg}">
+    dsddd
+</div>
+<p>
+    <span th:text="${user.nick}">xx</span>
+    <span th:text="${user.phone}">xxx</span>
+    <span th:text="${user.email}">xxxx</span>
+    <span th:text="${user.address}">xxxxx</span>
+
+</p>
+
+<p th:object="${user}">
+    <span th:text="*{nick}">xx</span>
+    <span th:text="*{phone}">xxx</span>
+    <span th:text="*{email}">xxxx</span>
+    <span th:text="*{address}">xxxxx</span>
+
+</p>
+
+<a href="info.html" th:href="@{'http://localhost:8080/boot/index?id='+${user.id}+''}">查看</a>
+<a href="info.html" th:href="@{|'http://localhost:8080/boot/index?id='${user.id}&${user.phone}|}">查看</a>
+</body>
+</html>
